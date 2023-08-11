@@ -10,8 +10,8 @@ declare namespace FastAPIAuthAPI {
   type CurrentUser = {
     id?: string;
     username?: string;
-    is_disabled?: boolean;
-    is_admin?: boolean;
+    isDisabled?: boolean;
+    isAdmin?: boolean;
     nickname?: string;
   };
 
