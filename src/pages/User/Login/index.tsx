@@ -1,12 +1,6 @@
 import { Footer } from '@/components';
 import { login } from '@/services/fastapi-auth/api';
-import {
-  AlipayCircleOutlined,
-  LockOutlined,
-  TaobaoCircleOutlined,
-  UserOutlined,
-  WeiboCircleOutlined,
-} from '@ant-design/icons';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { LoginForm, ProFormCheckbox, ProFormText } from '@ant-design/pro-components';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
 import { FormattedMessage, Helmet, SelectLang, history, useIntl, useModel } from '@umijs/max';
@@ -16,25 +10,25 @@ import { flushSync } from 'react-dom';
 import Settings from '../../../../config/defaultSettings';
 
 const ActionIcons = () => {
-  const langClassName = useEmotionCss(({ token }) => {
-    return {
-      marginLeft: '8px',
-      color: 'rgba(0, 0, 0, 0.2)',
-      fontSize: '24px',
-      verticalAlign: 'middle',
-      cursor: 'pointer',
-      transition: 'color 0.3s',
-      '&:hover': {
-        color: token.colorPrimaryActive,
-      },
-    };
-  });
+  // const langClassName = useEmotionCss(({ token }) => {
+  //   return {
+  //     marginLeft: '8px',
+  //     color: 'rgba(0, 0, 0, 0.2)',
+  //     fontSize: '24px',
+  //     verticalAlign: 'middle',
+  //     cursor: 'pointer',
+  //     transition: 'color 0.3s',
+  //     '&:hover': {
+  //       color: token.colorPrimaryActive,
+  //     },
+  //   };
+  // });
 
   return (
     <>
-      <AlipayCircleOutlined key="AlipayCircleOutlined" className={langClassName} />
+      {/* <AlipayCircleOutlined key="AlipayCircleOutlined" className={langClassName} />
       <TaobaoCircleOutlined key="TaobaoCircleOutlined" className={langClassName} />
-      <WeiboCircleOutlined key="WeiboCircleOutlined" className={langClassName} />
+      <WeiboCircleOutlined key="WeiboCircleOutlined" className={langClassName} /> */}
     </>
   );
 };
@@ -199,6 +193,7 @@ const Login: React.FC = () => {
                   id: 'pages.login.phoneLogin.tab',
                   defaultMessage: '手机号登录',
                 }),
+                disabled: true,
               },
             ]}
           />
