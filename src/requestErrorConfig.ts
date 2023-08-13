@@ -93,7 +93,10 @@ export const errorConfig: RequestConfig = {
       // 为请求头添加 token
       const headers = {
         ...config.headers,
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        // 判断是否存在 token，如果存在的话，则每个 http header 都加上 token
+        Authorization: localStorage.getItem('token')
+          ? `Bearer ${localStorage.getItem('token')}`
+          : '',
       };
       return { ...config, headers };
     },
